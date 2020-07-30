@@ -3,18 +3,22 @@ import React, { Component} from 'react';
 class TodoList extends Component {
 
 	constructor(props) {
-          super(props);
+		super(props);
+		console.log('** Constructor **');
 	  this.state = {
       items : [],
 	    term : ''
 	  };
 	}
 
+
 	setValue = e => {
-           this.setState({term: e.target.value});
+      this.setState({term: e.target.value});
 	}
-	addItem = () => {
-		this.setState({items : [...this.state.items, this.state.term]});
+	addItem = (e) => {
+		  e.preventDefault();
+			this.setState({items : [...this.state.items, this.state.term]});
+			this.setState({term: ''});
 	}
 	render() {
 		return (
@@ -27,7 +31,9 @@ class TodoList extends Component {
 			<button type="submit">Add</button>
 		  </form>
 		  <div>
-                     <li>{this.state.items[0]}</li>
+				{this.state.items.map(item =>
+					<li>{item}</li>
+					)}           
 		  </div>
 		</div>
 		);
