@@ -4,8 +4,7 @@ import UList from './UList';
 class TodoWidget extends Component {
 
 	constructor(props) {
-		super(props);
-		console.log("** TodoWidget**")
+	  super(props);
 	  this.state = {
       tasks : [],
 	  task : ''
