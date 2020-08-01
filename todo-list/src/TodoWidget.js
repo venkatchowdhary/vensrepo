@@ -24,7 +24,8 @@ class TodoWidget extends Component {
 		}
 	}
 	deleteItem = (index) => {
-		   let t = [...this.state.tasks].splice(index, 1);
+		   let t = [...this.state.tasks]
+		   t.splice(index, 1);
 		   this.setState({tasks: t})
 	}
 	render() {
