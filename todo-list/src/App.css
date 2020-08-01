@@ -1,5 +1,12 @@
 .App {
-  text-align: center;
+  text-align: left;
+  color: blue;
+  font-family: cursive;
+  padding-top: 200px;
+}
+
+.ulist {
+  display: block;
 }
 
 .App-logo {
